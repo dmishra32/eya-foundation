@@ -1,19 +1,23 @@
 import React from "react";
-import Navbar from "./components/Navbar.jsx";
-import Hero from "./components/Hero.jsx";
-import ImpactSection from "./components/ImpactSection.jsx";
-import Gallery from "./components/Gallery.jsx";
-import ContactForm from "./components/ContactForm.jsx";
-import Footer from "./components/Footer.jsx";
-import "./index.css";
+import Navbar from "./components/Navbar";
+import HeroSection from "./components/HeroSection";
+import ImpactSection from "./components/ImpactSection";
+import Gallery from "./components/Gallery";
+import ContactForm from "./components/ContactForm";
+import Footer from "./components/Footer";
+import ImpactStats from "components/ImpactStats";
+import SocialMediaFeed from "components/SocialMediaFeed";
 
 function App() {
   return (
     <div className="font-sans text-gray-800 bg-white">
       <Navbar />
-      <Hero />
+      <HeroSection />  {/* ✅ New Hero Section Added Here */}
+      {/* Rest of your sections */}
+      <ImpactStats />
       <ImpactSection />
       <Gallery />
+      <SocialMediaFeed />
       <ContactForm />
       <Footer />
     </div>
