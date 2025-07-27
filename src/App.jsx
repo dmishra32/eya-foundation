@@ -7,6 +7,7 @@ import ContactForm from "./components/ContactForm";
 import Footer from "./components/Footer";
 import ImpactStats from "components/ImpactStats";
 import SocialMediaFeed from "components/SocialMediaFeed";
+import LiveDonationFeed from "components/LiveDonationFeed";
 
 function App() {
   return (
