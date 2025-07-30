@@ -11,26 +11,26 @@ const HeroSection = () => {
   const backgrounds = [
     "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&h=900&fit=crop",
     "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1600&h=900&fit=crop",
-    "https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=1600&h=900&fit=crop"
+    "https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=1600&h=900&fit=crop",
   ];
 
   // Enhanced text content
   const slides = [
     {
-      title: "Everything You Are",
+      title: "Even You Are",
       subtitle: "A youth-driven movement for social impact.",
-      accent: "Transform Lives"
+      accent: "Transform Lives",
     },
     {
       title: "Empowering Communities",
       subtitle: "Join us in making a difference today.",
-      accent: "Create Change"
+      accent: "Create Change",
     },
     {
       title: "Building Tomorrow",
       subtitle: "Together we can achieve the impossible.",
-      accent: "Unite Forward"
-    }
+      accent: "Unite Forward",
+    },
   ];
 
   const currentSlide = slides[activeIndex];
@@ -61,7 +61,8 @@ const HeroSection = () => {
 
   const resetTransform = () => {
     if (glassCardRef.current) {
-      glassCardRef.current.style.transform = 'translate3d(0, 0, 0) rotateX(0) rotateY(0) scale(1)';
+      glassCardRef.current.style.transform =
+        "translate3d(0, 0, 0) rotateX(0) rotateY(0) scale(1)";
     }
   };
 
@@ -92,14 +93,14 @@ const HeroSection = () => {
             key={index}
             ref={index === activeIndex ? bgRef : null}
             className={`absolute inset-0 bg-cover bg-center transition-all duration-2000 ease-out ${
-              index === activeIndex 
-                ? 'opacity-100 scale-110' 
-                : 'opacity-0 scale-100'
+              index === activeIndex
+                ? "opacity-100 scale-110"
+                : "opacity-0 scale-100"
             }`}
             style={{
               backgroundImage: `url(${bg})`,
-              transform: index === activeIndex ? 'scale(1.1)' : 'scale(1)',
-              animation: index === activeIndex ? 'zoomOut 5s ease-out' : 'none'
+              transform: index === activeIndex ? "scale(1.1)" : "scale(1)",
+              animation: index === activeIndex ? "zoomOut 5s ease-out" : "none",
             }}
           />
         ))}
@@ -119,7 +120,7 @@ const HeroSection = () => {
               left: `${20 + i * 15}%`,
               top: `${30 + (i % 3) * 20}%`,
               animationDelay: `${i * 0.5}s`,
-              animationDuration: '3s'
+              animationDuration: "3s",
             }}
           />
         ))}
@@ -130,17 +131,21 @@ const HeroSection = () => {
         <div
           ref={glassCardRef}
           className={`
-            text-center max-w-4xl mx-auto p-8 md:p-12
-            backdrop-blur-xl bg-white/10 
-            rounded-3xl border border-white/20
-            shadow-2xl shadow-black/50
-            transition-all duration-500 ease-out
-            transform-gpu perspective-1000
-            ${isTransitioning ? 'opacity-0 scale-95 blur-sm' : 'opacity-100 scale-100 blur-0'}
-          `}
+         text-center w-11/12 sm:w-4/5 md:max-w-4xl mx-auto p-6 sm:p-8 md:p-12
+         backdrop-blur-xl bg-white/10 
+         rounded-3xl border border-white/20
+         shadow-2xl shadow-black/50
+         transition-all duration-500 ease-out
+         transform-gpu perspective-1000
+  ${
+    isTransitioning
+      ? "opacity-0 scale-95 blur-sm"
+      : "opacity-100 scale-100 blur-0"
+  }
+`}
           style={{
-            backdropFilter: 'blur(20px)',
-            WebkitBackdropFilter: 'blur(20px)'
+            backdropFilter: "blur(20px)",
+            WebkitBackdropFilter: "blur(20px)",
           }}
         >
           {/* Accent text */}
@@ -166,7 +171,7 @@ const HeroSection = () => {
               <span className="relative z-10">Donate Now</span>
               <div className="absolute inset-0 bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
             </button>
-            
+
             <button className="group relative px-8 py-4 bg-gradient-to-r from-teal-500 to-teal-400 hover:from-teal-400 hover:to-teal-300 text-black font-bold rounded-full shadow-2xl transform transition-all duration-300 hover:scale-110 hover:shadow-teal-500/50 active:scale-95 overflow-hidden">
               <span className="relative z-10">Take Action</span>
               <div className="absolute inset-0 bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
@@ -180,9 +185,9 @@ const HeroSection = () => {
                 key={index}
                 onClick={() => setActiveIndex(index)}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === activeIndex 
-                    ? 'bg-white scale-125 shadow-lg' 
-                    : 'bg-white/50 hover:bg-white/75'
+                  index === activeIndex
+                    ? "bg-white scale-125 shadow-lg"
+                    : "bg-white/50 hover:bg-white/75"
                 }`}
               />
             ))}
@@ -191,8 +196,8 @@ const HeroSection = () => {
       </div>
 
       {/* Enhanced scroll indicator */}
-      <a 
-        href="#impact" 
+      <a
+        href="#impact"
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30 group"
       >
         <div className="flex flex-col items-center animate-bounce">
@@ -208,18 +213,22 @@ const HeroSection = () => {
       {/* CSS Animations */}
       <style jsx>{`
         @keyframes zoomOut {
-          0% { transform: scale(1.1); }
-          100% { transform: scale(1.15); }
+          0% {
+            transform: scale(1.1);
+          }
+          100% {
+            transform: scale(1.15);
+          }
         }
-        
+
         .cursor-none {
           cursor: none;
         }
-        
+
         .perspective-1000 {
           perspective: 1000px;
         }
-        
+
         .transform-gpu {
           transform: translateZ(0);
           backface-visibility: hidden;

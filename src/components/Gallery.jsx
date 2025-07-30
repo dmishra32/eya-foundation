@@ -5,29 +5,41 @@ const Gallery = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
-  const allImages = [
-    { id: 1, src: "https://picsum.photos/seed/gallery1/400", alt: "Blood Donation Drive", caption: "Saving Lives Together" },
-    { id: 2, src: "https://picsum.photos/seed/gallery2/400", alt: "Birthday Celebration", caption: "Spreading Joy & Smiles" },
-    { id: 3, src: "https://picsum.photos/seed/gallery3/400", alt: "Education Support", caption: "Building Future Leaders" },
-    { id: 4, src: "https://picsum.photos/seed/gallery4/400", alt: "Food Distribution", caption: "Nourishing Communities" },
-    { id: 5, src: "https://picsum.photos/seed/gallery5/400", alt: "Sanitation Workers", caption: "Honoring Our Heroes" },
-    { id: 6, src: "https://picsum.photos/seed/gallery6/400", alt: "LGBTQIA+ Support", caption: "Embracing Diversity" },
-    { id: 7, src: "https://picsum.photos/seed/gallery7/400", alt: "Community Outreach", caption: "Together We Grow" },
-    { id: 8, src: "https://picsum.photos/seed/gallery8/400", alt: "Volunteer Team", caption: "Hearts That Care" },
-    { id: 9, src: "https://picsum.photos/seed/gallery9/400", alt: "Impact Stories", caption: "Lives Transformed" },
-    { id: 10, src: "https://picsum.photos/seed/gallery10/400", alt: "Community Event", caption: "Making Memories" }
-  ];
+const allImages = [
+  { id: 1, src: "https://picsum.photos/seed/gallery1/400", alt: "Blood Donation Drive", caption: "Saving Lives Together" },
+  { id: 2, src: "https://picsum.photos/seed/gallery2/400", alt: "Birthday Celebration", caption: "Spreading Joy & Smiles" },
+  { id: 3, src: "https://picsum.photos/seed/gallery3/400", alt: "Education Support", caption: "Building Future Leaders" },
+  { id: 4, src: "https://picsum.photos/seed/gallery4/400", alt: "Food Distribution", caption: "Nourishing Communities" },
+  { id: 5, src: "https://picsum.photos/seed/gallery5/400", alt: "Sanitation Workers", caption: "Honoring Our Heroes" },
+  { id: 6, src: "https://picsum.photos/seed/gallery6/400", alt: "LGBTQIA+ Support", caption: "Embracing Diversity" },
+  { id: 7, src: "https://picsum.photos/seed/gallery7/400", alt: "Community Outreach", caption: "Together We Grow" },
+  { id: 8, src: "https://picsum.photos/seed/gallery8/400", alt: "Volunteer Team", caption: "Hearts That Care" },
+  { id: 9, src: "https://picsum.photos/seed/gallery9/400", alt: "Impact Stories", caption: "Lives Transformed" },
+  { id: 10, src: "https://picsum.photos/seed/gallery10/400", alt: "Community Event", caption: "Making Memories" },
+  { id: 11, src: "https://picsum.photos/seed/gallery11/400", alt: "Workshop Session", caption: "Learning Together" },
+  { id: 12, src: "https://picsum.photos/seed/gallery12/400", alt: "Children's Day", caption: "Cherishing Childhood" },
+  { id: 13, src: "https://picsum.photos/seed/gallery13/400", alt: "Tree Plantation", caption: "Greener Tomorrow" },
+  { id: 14, src: "https://picsum.photos/seed/gallery14/400", alt: "Fundraising Gala", caption: "Support That Matters" },
+  { id: 15, src: "https://picsum.photos/seed/gallery15/400", alt: "Healthcare Camp", caption: "Health Is Wealth" },
+  { id: 16, src: "https://picsum.photos/seed/gallery16/400", alt: "Awareness Walk", caption: "Steps for a Cause" },
+  { id: 17, src: "https://picsum.photos/seed/gallery17/400", alt: "Women Empowerment", caption: "Strength in Unity" },
+  { id: 18, src: "https://picsum.photos/seed/gallery18/400", alt: "Senior Citizen Meet", caption: "Respect and Care" },
+  { id: 19, src: "https://picsum.photos/seed/gallery19/400", alt: "Disaster Relief", caption: "United in Crisis" },
+  { id: 20, src: "https://picsum.photos/seed/gallery20/400", alt: "Cultural Fest", caption: "Celebrating Together" }
+];
+
 
   // Get current 4 images to display
   const getCurrentImages = () => {
     const images = [];
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 8; i++) {
       const index = (currentIndex + i) % allImages.length;
       images.push(allImages[index]);
     }
+    
     return images;
   };
-
+  
   // Auto-cycle through images
   useEffect(() => {
     const interval = setInterval(() => {
@@ -109,7 +121,7 @@ const Gallery = () => {
           </button>
 
           {/* Images Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 grid-rows-2 gap-4 md:gap-6">
             {getCurrentImages().map((image, index) => (
               <div
                 key={`${image.id}-${currentIndex}`}

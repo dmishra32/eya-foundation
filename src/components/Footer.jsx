@@ -156,7 +156,7 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto px-6 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-slate-400 text-sm">
-              © {new Date().getFullYear()} Eyaa Foundation. All rights reserved.
+              © {new Date().getFullYear()} Eyaa Foundation. All rights reserved | Designed & Developed by Deevesh Mishra.
             </div>
           </div>
         </div>
